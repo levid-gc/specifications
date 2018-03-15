@@ -14,7 +14,7 @@ TypeScript 是 Microsoft 公司的商标。
 
 ## 目录
 
-* [1 Introduction](#1)
+* [1 介绍](#1)
   * [1.1 Ambient Declarations](#1.1)
   * [1.2 Function Types](#1.2)
   * [1.3 Object Types](#1.3)
@@ -237,25 +237,25 @@ TypeScript 是 Microsoft 公司的商标。
 
 <br/>
 
-# <a name="1"/>1 Introduction
+# <a name="1"/>1 介绍
 
-JavaScript applications such as web e-mail, maps, document editing, and collaboration tools are becoming an increasingly important part of the everyday computing. We designed TypeScript to meet the needs of the JavaScript programming teams that build and maintain large JavaScript programs. TypeScript helps programming teams to define interfaces between software components and to gain insight into the behavior of existing JavaScript libraries. TypeScript also enables teams to reduce naming conflicts by organizing their code into dynamically-loadable modules. TypeScript's optional type system enables JavaScript programmers to use highly-productive development tools and practices: static checking, symbol-based navigation, statement completion, and code re-factoring.
+类似 Web 电子邮件，文档编辑，以及协作工具这样的 JavaScript 应用已经成为了常电脑工作中越来越重要的一部分。我们设计的 TypeScript 就是为了满足 JavaScript 编程团队构建和维护大型 JavaScript 程序的需求。TypeScript 帮助编程团队定义软件组件间的接口以及了解现有 JavaScript 类库的行为。TypeScript 也使得团队通过将他们的代码组织到动态的可加载的模块中来降低命名的冲突。TypeScript 可选的类型系统使得 JavaScript 编程人员可以使用极具生产力的开发工具和实践：静态检查，基于符号的导航，语句完成，以及代码重构。
 
-TypeScript is a syntactic sugar for JavaScript. TypeScript syntax is a superset of ECMAScript 2015 (ES2015) syntax. Every JavaScript program is also a TypeScript program. The TypeScript compiler performs only file-local transformations on TypeScript programs and does not re-order variables declared in TypeScript. This leads to JavaScript output that closely matches the TypeScript input. TypeScript does not transform variable names, making tractable the direct debugging of emitted JavaScript. TypeScript optionally provides source maps, enabling source-level debugging. TypeScript tools typically emit JavaScript upon file save, preserving the test, edit, refresh cycle commonly used in JavaScript development.
+TypeScript 是 JavaScript 的一个语法糖。TypeScript 语法是 ECMAScript 2015 (ES2015) 语法的超集。每一个 JavaScript 程序同样也是一个 TypeScript 程序。TypeScript 编译器在 TypeScript 程序上只执行文件级的转换，而不会重排 TypeScript 中定义的变量。这使得 JavaScript 输出与 TypeScript 输入非常相似。TypeScript 并不会转换变量的名称，可以对输出的 JavaScript 直接进行调试。TypeScript 可以可选地提供源码映射，这可以启用源代码级的调试。在文件保存的时候 TypeScript 工具通常会输出 JavaScript，保留 JavaScript 开发中常用的测试，编辑，刷新周期功能。
 
-TypeScript syntax includes all features of ECMAScript 2015, including classes and modules, and provides the ability to translate these features into ECMAScript 3 or 5 compliant code.
+TypeScript 语法包含了所有的 ECMAScript 2015 特性，包括类和模块，并且提供了将这些特性转换为 ECMAScript 3 或 5 兼容代码的能力。
 
-Classes enable programmers to express common object-oriented patterns in a standard way, making features like inheritance more readable and interoperable. Modules enable programmers to organize their code into components while avoiding naming conflicts. The TypeScript compiler provides module code generation options that support either static or dynamic loading of module contents.
+类使得编程人员可以通过一个标准的方式来表述常见的面向对象模式，使得继承这样的特性更具可读性和互操作性。模块是的编程人员将他们的代码组织到组件中从而避免命名的冲突。TypeScript 编译器提供了模块代码生成选项用于支持静态或动态的模块内容加载。
 
-TypeScript also provides to JavaScript programmers a system of optional type annotations. These type annotations are like the JSDoc comments found in the Closure system, but in TypeScript they are integrated directly into the language syntax. This integration makes the code more readable and reduces the maintenance cost of synchronizing type annotations with their corresponding variables.
+TypeScript 同样为 JavaScript 编程人员提供了一个可选的类型注解系统。这些类型注解类似于 Closure 系统中的 JSDoc 注释，但是在 TypeScript 中它们被直接集成到语言句法中。这个集成使得代码更具可读性并且减少了与他们对应的变量同步类型注解的维护代价。
 
-The TypeScript type system enables programmers to express limits on the capabilities of JavaScript objects, and to use tools that enforce these limits. To minimize the number of annotations needed for tools to become useful, the TypeScript type system makes extensive use of type inference. For example, from the following statement, TypeScript will infer that the variable 'i' has the type number.
+TypeScript 类型系统使得编程人员可以在 JavaScript 对象上表述其功能限制，并使用工具来实施这些限制。为了减少工具起作用而需要到的注解，TypeScript 类型系统充分利用了类型推论。比如，在下面的语句中，TypeScript 将会推论变量 'i' 的类型为 number。
 
 ```TypeScript
 var i = 0;
 ```
 
-TypeScript will infer from the following function definition that the function f has return type string.
+TypeScript 将会从下面的函数定义推论出函数 f 的返回值类型为 string。
 
 ```TypeScript
 function f() {  
@@ -263,11 +263,11 @@ function f() {
 }
 ```
 
-To benefit from this inference, a programmer can use the TypeScript language service. For example, a code editor can incorporate the TypeScript language service and use the service to find the members of a string object as in the following screen shot.
+这种推论的好处就是编程人员可以使用 TypeScript 语言服务。举个例子，一个代码编辑器可以结合 TypeScript 语言服务并使用这个服务来找出一个字符串对象的成员，如下面截屏所示。
 
 &emsp;&emsp;![](../assets/images/typescript/image1.png)
 
-In this example, the programmer benefits from type inference without providing type annotations. Some beneficial tools, however, do require the programmer to provide type annotations. In TypeScript, we can express a parameter requirement as in the following code fragment.
+在这个例子中，编程人员在没有提供类型注解的情况下享受到了类型推论的好处。然而，某些有益的工具却需要编程人员提供类型注解。在 TypeScript 中，我们可以在下面的代码片段中表述一个参数要求。
 
 ```TypeScript
 function f(s: string) {  
@@ -278,7 +278,7 @@ f({});       // Error
 f("hello");  // Ok
 ```
 
-This optional type annotation on the parameter 's' lets the TypeScript type checker know that the programmer expects parameter 's' to be of type 'string'. Within the body of function 'f', tools can assume 's' is of type 'string' and provide operator type checking and member completion consistent with this assumption. Tools can also signal an error on the first call to 'f', because 'f' expects a string, not an object, as its parameter. For the function 'f', the TypeScript compiler will emit the following JavaScript code:
+参数 's' 上面可选的类型注解使得 TypeScript 检查器可以知晓编程人员期望参数 's' 的类型为 'string'。在函数 'f' 的主体中，工具会认为 's' 的类型为 'string' 并提供操作符类型检查和成员完成以与这样的假设保持一致性。工具也会在第一个对 'f' 的调用上发出警告，因为 'f' 期望的是一个字符串，而不是一个对象来作为它的参数。对于函数 'f'，TypeScript 编译器会输出以下的 JavaScript 代码：
 
 ```TypeScript
 function f(s) {  
@@ -286,7 +286,7 @@ function f(s) {
 }
 ```
 
-In the JavaScript output, all type annotations have been erased. In general, TypeScript erases all type information before emiting JavaScript.
+在 JavaScript 输出中，所有的类型注解都将被清除掉。一般而言，TypeScript 在输出 JavaScript 前会清除所有的类型信息。
 
 ## <a name="1.1"/>1.1 Ambient Declarations
 
