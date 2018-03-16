@@ -5,5 +5,3 @@ _注意：以下规范纯属个人翻译，因水平有限，存在语句不通�
 * IETF
   * [RFC 5234 - BNF 语法规范扩充：ABNF](./ietf/rfc5234.md)
   * [RFC 8259 - JavaScript 对象标记 (JSON) 数据交换格式](./ietf/rfc8259.md)
-* MICROSOFT
-  * [TypeScript 语言规范](./microsoft/typescript.md)
